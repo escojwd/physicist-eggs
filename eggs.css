@@ -1,0 +1,61 @@
+
+.frame {
+    width: 450px;
+    height: 200px;
+    border: 15px solid #455681;
+    border-bottom: none;
+    margin: 300px auto;
+}
+
+.eggs-wrapper {
+    margin: 120px 90px;
+    display: flex;
+}
+
+.egg {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #dea421;
+    position: relative;
+    transform-origin: 50% -300%;
+
+}
+
+.egg::before {
+    content: '';
+    width: 2px;
+    height: 120px;
+    background-color: #dea421;
+    left: 24px;
+    top: -120px;
+    position: absolute;
+}
+
+.first-move {
+    animation: firstegg .9s alternate ease-in infinite;
+}
+
+.second-move {
+    animation: lastegg .9s alternate ease-out infinite;
+}
+
+
+@keyframes firstegg {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes lastegg {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
